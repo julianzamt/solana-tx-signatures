@@ -2,9 +2,11 @@
 The intention of this repo is to test out what kind of accounts can sign a TX in Solana.
 The fee payer account must be a SystemProgram owned account [src](https://github.com/solana-labs/solana/blob/master/runtime/src/accounts.rs#L450)
 
-This program tests wether a wallet, a local owned account (not pda), an external own account (not pda) and an unitiliazed account can or not sign a TX.
+This program tests wether a wallet, a local owned account (not pda), an external own account (not pda), an unitiliazed account and an executable account can or not sign a TX.
 
 Spoiler: All those types of accounts are valid signers of a TX.
+
+The executable account is an interesting case, since it can be vector of an attack if not checked properly from the Callee during a cpi.
 
 ## Usage
 Pre-Requirements:
